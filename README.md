@@ -15,6 +15,6 @@ When you’re satisfied with your solution, provide a link to a repository and i
 
 # Discussion Notes
 1. What decisions did you make before you began development?
-1. How did you decide what to work on in order to meet the time constraint?
-1. What was your decision making process for your code organization?
-1. If you had more time, what would you have implemented?
+2. How did you decide what to work on in order to meet the time constraint?
+3. What was your decision making process for your code organization?
+4. If you had more time, what would you have implemented?
