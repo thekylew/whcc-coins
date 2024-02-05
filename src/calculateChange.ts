@@ -9,23 +9,26 @@ export default function calculateChange(
 ): Change[] {
   if (amount <= 0) return result;
 
+  //iterate through the denominations we've been given
+  //NOTE: we assume that the denominations are sorted in descending order; see currencyDenominations.ts
   for (let i = 0; i < denominations.length; i++) {
     const denomination = denominations[i];
+
+    // If the current denomination is less than or equal to the amount, use it
     if (amount >= denomination.value) {
+      // Calculate the number of times the denomination can be used
       const count = Math.floor(amount / denomination.value);
+
+      // Subtract the value of the denomination from the amount
       amount -= count * denomination.value;
-      amount = parseFloat(amount.toFixed(2)); // Correct for floating point precision issues
 
-      const existingIndex = result.findIndex(
-        (r) => r.denominationName === denomination.name
-      );
-      if (existingIndex >= 0) {
-        result[existingIndex].count += count;
-      } else {
-        result.push(new Change(denomination.name, count));
-      }
+      // Correct for floating point precision issues
+      amount = parseFloat(amount.toFixed(2));
 
-      // Recursively call to process the remainder of the amount with the current state of result
+      // Add the denomination and count to the result
+      result.push(new Change(denomination.name, count));
+
+      // Recursively call to process the remainder of the amount with the current state of the result
       return calculateChange(amount, denominations, result);
     }
   }
