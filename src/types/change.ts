@@ -6,8 +6,4 @@ export default class Change {
         this.denominationName = denominationName;
         this.count = count;
     }
-
-    add() {
-        this.count++;
-    }
 }

@@ -7,7 +7,7 @@ const { amount, currency } = commandLineArgs(optionDefinitions);
 
 //validate args
 if (!amount || isNaN(amount)) {
-  console.log('Please provide a valid amount. Example: `npm run start -- --amount=2.50`');
+  console.log('Please provide a valid amount. Example: `npm run start -- --amount=3.50`');
 
   process.exit(1);
 }
