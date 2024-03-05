@@ -1,0 +1,35 @@
+{
+  "name": "whcc-coins",
+  "version": "1.0.0",
+  "description": "Create a **private** [mirror copy](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository#mirroring-a-repository) of this repo in your own Github account.",
+  "main": "./src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "tsc src/index.ts"
+  },
+  "bin": {
+    "whcc-coins": "src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thekylew/whcc-coins.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thekylew/whcc-coins/issues"
+  },
+  "homepage": "https://github.com/thekylew/whcc-coins#readme",
+  "devDependencies": {
+    "@types/command-line-args": "^5.2.3",
+    "@types/node": "^20.11.15",
+    "nodemon": "^3.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "command-line-args": "^5.2.1"
+  }
+}
